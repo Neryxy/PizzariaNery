@@ -2,14 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="container mt-5">
     <div class="">
-        <div>
+        <div class="text-center">
             <div>
                 <h1>Bem-Vindo a Pizzaria do Nery</h1>
                 <h3>O que deseja no momento: </h3>
                 <div class="btn-default">
-                    <a asp-controller="Pizzaria"asp-action="NovoPedido" class="btn btn-outline-primary mt-3">Novo Pedido</a>
+                    <h3>Fazer um Novo Pedido 🍕 </h3>
+                    <a asp-controller="Pizzaria"asp-action="NovoPedido" class="btn btn-outline-primary mt-3">Novo Pedido</a><br />
+                    <h3>Verificar Entrega 🛒</h3>
                     <a asp-controller="Pizzaria" asp-action="NotaPedido" class="btn btn-outline-primary mt-3">Nota Pedido</a>
                 </div>
             </div>
