@@ -1,5 +1,70 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Pizzaria.Models.Pedido
+
+<div class="container mt-5 ">
+    <div class="card shadow">
+        <div class="card-header bg-danger text-white">
+            <h2 class="text-center">Monte a sua Pizza</h2>
+        </div>
+        <div class="card-body bg-dark-subtle">
+            <form action="NotaPedido" method="post">
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Tamanho:</label>
+                    <select asp-for="tamanho" class="form-select" required>
+                        <option value="Pequena">Pequena (R$30,00)</option>
+                        <option value="Média">Média (R$50,00)</option>
+                        <option value="Grande">Grande (R$60,00)</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Sabor:</label>
+                    <select asp-for="sabor" class="form-select" required>
+                        <option value="Queijo">Queijo</option>
+                        <option value="Pepperoni">Pepperoni</option>
+                        <option value="Calabresa">Calabresa (+10% no valor)</option>
+                        <option value="Marguerita">Marguerita (+10% no valor)</option>
+                        <option value="Portuguesa">Portuguesa (+15% no valor)</option>
+                        <option value="Frango com Catupiry">Frango com Catupiry (+20% no valor)</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Borda Recheada (+R$10):</label>
+                    <select asp-for="borda" class="form-select" required>
+                        <option value="Nenhuma">- Nenhuma -</option>
+                        <option value="Borda de catupiry">Borda de catupiry</option>
+                        <option value="Borda de cheddar">Borda de cheddar</option>
+                        <option value="Borda de queijo">Borda de queijo</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Adicionais (+R$5,00 cada)</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="adicionais" value="Bacon"/>
+                        <label class="form-check-label">Bacon</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="adicionais" value="Azeitona" />
+                        <label class="form-check-label">Azeitona</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="adicionais" value="Cebola" />
+                        <label class="form-check-label">Cebola</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="adicionais" value="Catupiry" />
+                        <label class="form-check-label">Catupiry</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="adicionais" value="Cheedar" />
+                        <label class="form-check-label">Cheedar</label>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Endereço de Entrega:</label>
+                    <input asp-for="endereco" class="form-control" placeholder="Bairro, Rua e Número" value="" required />
+                    <small class="text-muted">Taxa de entrega R$10,00 (Previsão de entrega 1h após o pedido)</small>
+                </div>
+                <button type="submit" class="btn btn-success w-100 btn-lg">Fazer Pedido</button>
+            </form>
+        </div>
+    </div>
+</div>
