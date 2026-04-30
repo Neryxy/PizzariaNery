@@ -1,20 +1,58 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿﻿@{
+ViewData["Title"] = "Home";
 }
 
+<h2 class="text-center mt-4">Pizzaria do Nery</h2>
+
 <div class="container mt-5">
-    <div class="">
-        <div class="text-center">
-            <div>
-                <h1>Bem-Vindo a Pizzaria do Nery</h1>
-                <h3>O que deseja no momento: </h3>
-                <div class="btn-default">
-                    <h3>Fazer um Novo Pedido 🍕 </h3>
-                    <a asp-controller="Pizzaria"asp-action="NovoPedido" class="btn btn-outline-primary mt-3">Novo Pedido</a><br />
-                    <h3>Verificar Entrega 🛒</h3>
-                    <a asp-controller="Pizzaria" asp-action="NotaPedido" class="btn btn-outline-primary mt-3">Nota Pedido</a>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+
+            <div class="card shadow p-4">
+
+                <div class="text-center mb-4">
+                    <h4 class="fw-bold">Bem-vindo a Pizzaria do Nery</h4>
+                    <p class="text-muted">O que deseja no Momento.</p>
                 </div>
+
+                <div class="row g-4 justify-content-around">
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Fazer Novo Pedido 🍕</h5>
+                                <p class="card-text text-muted">
+                                    Faça seu Pedido Aqui e Agora na melhor Pizzaria!<br />
+                                </p>
+                                <a asp-controller="Pizzaria" asp-action="NovoPedido" class="btn btn-success mt-1">
+                                    Pedido
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Verificar Pedido 🛒</h5>
+                                <p class="card-text text-muted">
+                                    Visualize seu ultimo pedido e quanto tempo falta!
+                                </p>
+                                <a asp-controller="Pizzaria" asp-action="NotaPedido" class="btn btn-primary mt-1">
+                                    Verificar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+
         </div>
+
     </div>
+
 </div>
